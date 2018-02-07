@@ -1,0 +1,9 @@
+- args:
+    sql: ALTER TABLE "product" ALTER COLUMN "product_imageid" TYPE text;
+  type: run_sql
+- args:
+    sql: ALTER TABLE "product" ALTER COLUMN "product_imageid" DROP DEFAULT;
+  type: run_sql
+- args:
+    sql: ALTER TABLE "product" ALTER COLUMN "product_imageid" DROP NOT NULL;
+  type: run_sql

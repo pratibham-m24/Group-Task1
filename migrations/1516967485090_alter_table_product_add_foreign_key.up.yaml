@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "product" ADD FOREIGN KEY ("product_imageid") REFERENCES "image"
+      ("image_id")
+  type: run_sql

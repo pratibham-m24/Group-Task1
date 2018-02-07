@@ -1,0 +1,7 @@
+- alias: hasura
+  config:
+    configmap: controller-conf
+    namespace: environmentally45-hasura
+  data: null
+  kubeContext: environmentally45
+  name: environmentally45

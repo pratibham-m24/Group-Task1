@@ -1,0 +1,10 @@
+- args:
+    permission:
+      columns:
+      - cart_id
+      - cart_userid
+      - cart_productid
+      filter: {}
+    role: user
+    table: cart
+  type: create_select_permission

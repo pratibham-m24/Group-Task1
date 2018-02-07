@@ -1,0 +1,6 @@
+- args:
+    name: orderproduct
+    table: order
+    using:
+      foreign_key_constraint_on: order_product
+  type: create_object_relationship

@@ -1,0 +1,7 @@
+- args:
+    sql: CREATE TABLE "image"("image_id" integer NOT NULL, "file_id" text NOT NULL,
+      PRIMARY KEY ("image_id") )
+  type: run_sql
+- args:
+    name: image
+  type: add_existing_table_or_view

@@ -1,0 +1,10 @@
+- args:
+    permission:
+      columns:
+      - product_id
+      - product_name
+      - product_category
+      filter: {}
+    role: user
+    table: product
+  type: create_select_permission
