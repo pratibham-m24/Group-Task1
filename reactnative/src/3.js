@@ -15,12 +15,20 @@ Icon
 import {ScrollView,TouchableOpacity} from 'react-native';
 import FIcon from 'react-native-vector-icons/FontAwesome';
 class Header3 extends Component {
+constructor(props){
+  
+  super(props);
+
+    
+    }
+ 
   render() {
+const{navigate}=this.props.navigation;
     return (
       <Container >
         <Header style={{backgroundColor:'#4d4dff'}}>
 <Left>
-<Button transparent onPress={() => {this.props.navigation.navigate('DrawerOpen')}}>
+<Button transparent onPress={() => this.props.navigation.navigate('DrawerOpen')}>
 
 <Icon name="menu" size={25} style={{color:'white'}}  />
 
@@ -46,6 +54,7 @@ class Header3 extends Component {
 
        <ScrollView>
         <Content>
+ 
 <List>
 <ListItem itemDivider>
 <Text>Men</Text>
