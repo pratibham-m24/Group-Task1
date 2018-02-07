@@ -220,7 +220,7 @@ return (
 <Card>
 <CardItem>
 <Image style={styles.canvas}  source={{uri: this.state.resp1[0].product_imageid}}/>
-
+<Image style={styles.canvas}  source={{uri: this.state.resp1[1].product_imageid}}/>
 </CardItem>
 </Card>
 
@@ -237,6 +237,7 @@ return (
 <Card>
 <CardItem>
 <Image style={styles.canvas}  source={{uri: this.state.resp2[0].product_imageid}}/>
+<Image style={styles.canvas}  source={{uri: this.state.resp2[1].product_imageid}}/>
 
 
 
