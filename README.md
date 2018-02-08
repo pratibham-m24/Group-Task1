@@ -18,8 +18,7 @@ frameworks and it uses Hasura features.
 •	npm start (To run the app,you must install expo app in your device)
 
 Alternatively you can install the app in your device using the following link:
- https://exp-shell-app-assets.s3-us-west-1.amazonaws.com/android%2F%40prat24%2FGroupTask1-751ec659-0c42-11e8-97eb-0a580a782815-signed.apk
-
+ https://exp-shell-app-assets.s3-us-west-1.amazonaws.com/android%2F%40prat24%2FGroupTask1-477c002c-0d01-11e8-97eb-0a580a782815-signed.apk
 
 
 
