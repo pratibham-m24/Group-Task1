@@ -15,15 +15,9 @@ Icon
 import {ScrollView,TouchableOpacity} from 'react-native';
 import FIcon from 'react-native-vector-icons/FontAwesome';
 class Header3 extends Component {
-constructor(props){
-  
-  super(props);
 
-    
-    }
- 
   render() {
-const{navigate}=this.props.navigation;
+
     return (
       <Container >
         <Header style={{backgroundColor:'#4d4dff'}}>

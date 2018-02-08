@@ -29,7 +29,5 @@ const S3 = StackNavigator(
   }
 );
 
-export default () =>
-  <Root>
-    <S3 />
-  </Root>;
+export default S3;
+  
