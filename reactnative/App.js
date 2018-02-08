@@ -10,20 +10,20 @@ import Header3 from "./src/3";
 import Main from "./src/Main.js";
 import SideBar from "./src/SideBar.js";
 import Drawer2 from "./src/drawer1.js";
-import AuthScreen from "./src/AuthScreen.js";
+import Login from "./src/Login.js";
 
 
 
 const AppNavigator = StackNavigator(
   {
-    Login: {screen: AuthScreen},
+    Login: {screen: Login},
 
     Drawer2: { screen: Drawer2},
     
    Header1:{screen: Header1},
     Main : {screen: Main},
    Header3:{screen: Header3},
-Header4:{screen: Header3},
+Header4:{screen: Header4},
    },
   {
     initialRouteName: "Login",

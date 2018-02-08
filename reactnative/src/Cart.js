@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {View,StyleSheet,TouchableOpacity,Image} from 'react-native';
 import { Container, Header, Item, Input,Icon, Button,Thumbnail,Content,Footer,FooterTab,Spinner,Toast, Left,Card,CardItem,Right,Body,Text,List,ListItem } from 'native-base';
-import { viewcart,deletecart,addorder } from './hasuraApi'
+import { viewcart,deletecart,addorder } from './Api'
 import FIcon from 'react-native-vector-icons/FontAwesome';
 class Empty extends React.Component {
 render(){

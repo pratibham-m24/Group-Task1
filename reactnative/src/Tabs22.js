@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {AppRegistry,StyleSheet,TouchableOpacity,View,Image} from 'react-native';
 import { Container, Header, Item, Input,Icon,Form, Button, Text,Spinner,Content,Card,CardItem,Left,Thumbnail,Body } from 'native-base';
-import { trysearch } from './hasuraApi'
+import { trysearch } from './Api'
 
 
 import FIcon from 'react-native-vector-icons/FontAwesome';

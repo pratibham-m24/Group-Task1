@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {View,StyleSheet,TouchableOpacity,Image} from 'react-native';
 import { Container, Header, Item, Input,Icon, Button,Thumbnail,Content,Spinner, Left,Card,CardItem,Right,Body,Text } from 'native-base';
-import { vieworder } from './hasuraApi'
+import { vieworder } from './Api'
 import FIcon from 'react-native-vector-icons/FontAwesome';
 
 class Order extends React.Component {

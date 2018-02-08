@@ -5,11 +5,11 @@ Input, Right, Spinner} from 'native-base';
 
 import { View, Alert } from 'react-native';
 
-import { trySignup, tryLogin } from './hasuraApi';
+import { trySignup, tryLogin } from './Api';
 
 import Drawer2 from './drawer1.js'
 
- class AuthScreen extends React.Component {
+ class Login extends React.Component {
   
 
   constructor(props){
@@ -199,4 +199,4 @@ if(this.state.isLoggedIn === true){
 
 
 
-export default AuthScreen;
+export default Login;

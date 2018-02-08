@@ -19,7 +19,7 @@ import Sub1 from "./sub1.js";
 import Product from "./product.js";
 import Book from "./Book.js";
 import Order from "./order.js";
-import AuthScreen from "./AuthScreen.js";
+import Login from "./Login.js";
 import {TouchableOpacity,View,Image} from 'react-native';
 import {NavigationActions} from 'react-navigation';
 
@@ -45,7 +45,7 @@ Sub1:{screen:Sub1},
 Product:{screen:Product},
 Order:{screen:Order},
 Book:{screen:Book},
-Login: {screen: AuthScreen},
+Login: {screen: Login},
     },
   {
     

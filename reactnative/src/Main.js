@@ -5,7 +5,7 @@ import FIcon from 'react-native-vector-icons/FontAwesome';
 
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import {NavigationActions} from 'react-navigation';
-import { getProduct } from './hasuraApi'
+import { getProduct } from './Api'
 
 
 import { Container, Header, Title, Content,Thumbnail, Footer,Segment,DeckSwiper,Spinner,Card,CardItem, FooterTab,Item,Input, Button, Left, Right, Body, Icon, Text,List,ListItem } from 'native-base';

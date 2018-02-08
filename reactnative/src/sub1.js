@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {View,StyleSheet,TouchableOpacity,Image} from 'react-native';
-import { getProduct,addcart } from './hasuraApi'
+import { getProduct,addcart } from './Api'
 import { Container, Header, Item, Input,Icon, Button, Left,Right,Body,Text,Title,Spinner,Thumbnail,Content,Card,CardItem } from 'native-base';
 import FIcon from 'react-native-vector-icons/FontAwesome';
 class Sub1 extends React.Component {

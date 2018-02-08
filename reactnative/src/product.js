@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {View,StyleSheet,TouchableOpacity,Image} from 'react-native';
-import { getProduct,addcart,addorder } from './hasuraApi'
+import { getProduct,addcart,addorder } from './Api'
 import { Container, Header, Item, Input,Icon, Button, Left,Right,Body,Text,Toast,Title,Spinner,Thumbnail,Footer,FooterTab,Content,Card,CardItem } from 'native-base';
 import FIcon from 'react-native-vector-icons/FontAwesome';
 class Product extends React.Component {
