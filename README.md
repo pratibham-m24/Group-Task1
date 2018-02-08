@@ -7,7 +7,7 @@ frameworks and it uses Hasura features.
  
 •	git clone https://github.com/pratibham-m24/Group-Task1.git 
 
-•	cd Group_Task1
+•	cd Group_Task1/reactnative
 
 •	npm install
 
