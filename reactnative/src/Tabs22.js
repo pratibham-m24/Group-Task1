@@ -96,7 +96,7 @@ return (
 }); };
 if(this.state.resp!== null){
 return (
-<Container>
+<Container style={{backgroundColor:'#DCDCDC'}}>
         <Header searchBar rounded style={{backgroundColor: '#fff',borderWidth:1}}>
  <Item>
 <Button transparent onPress={() => this.props.navigation.goBack(null)}
@@ -108,7 +108,7 @@ return (
          
 
             
-            <Input value={this.state.searchBox} onChangeText={this.handlesearchChange} />
+            <Input value={this.state.searchBox} placeholder="Search for Products" onChangeText={this.handlesearchChange} />
 <Button transparent onPress={this.handleSearchPressed} >
               <Icon name="search" style={{color:'black'}} />
             </Button>
@@ -134,7 +134,7 @@ return (
 
 return (
    
-<Container style={{backgroundColor:'#DCDCDC'}}>
+<Container style={{backgroundColor:'#fff'}}>
         <Header searchBar rounded style={{backgroundColor: '#fff'}}>
  <Item>
 <Button transparent onPress={() => this.props.navigation.goBack(null)}

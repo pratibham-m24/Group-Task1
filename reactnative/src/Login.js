@@ -78,7 +78,7 @@ respJson = await resp.json();
 global.userid= respJson.hasura_id;
 global.auth=respJson.auth_token;
 console.log(respJson);
- if(respJson.code === "user-exists" || respJson.code === "invalid-password" ){
+ if(respJson.code === "user-exists" || respJson.code === "invalid-password" || respJson.code === "invalid-username" ){
                       Alert.alert("Error",respJson.message)} 
  else {
  this.setState({isLoggedIn:true}); }

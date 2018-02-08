@@ -53,10 +53,10 @@ const{navigate}=this.props.navigation;
         </Header>
 
        <ScrollView>
-        <Content>
+        <Content style={{backgroundColor:'#fff'}}>
  
 <List>
-<ListItem itemDivider>
+<ListItem itemDivider style={{backgroundColor:'#32CD32'}}>
 <Text>Men</Text>
 </ListItem>
 <ListItem>
@@ -77,7 +77,7 @@ const{navigate}=this.props.navigation;
 <Text>       Watches</Text>
 </TouchableOpacity>
 </ListItem>
-<ListItem itemDivider>
+<ListItem itemDivider style={{backgroundColor:'#32CD32'}}>
 <Text>Women</Text>
 </ListItem>
 <ListItem>

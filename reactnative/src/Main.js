@@ -192,7 +192,7 @@ return (
 <View style={{paddingLeft:10,flexDirection: 'row',justifyContent: 'space-between'}}>
 <Text style={{color:'white',fontSize: 20}}>Mobile Phones      </Text>
 
-<Button style={{height:20, width:100}} onPress={() => this.props.navigation.navigate('Sub1',{title:"Mobile Phones",category:"mobile_phone",})}> 
+<Button style={{height:30, width:100}} onPress={() => this.props.navigation.navigate('Sub1',{title:"Mobile Phones",category:"mobile_phone",})}> 
 <Text>View all</Text>
 </Button>
 </View>
@@ -210,8 +210,8 @@ return (
 <List>
 <ListItem>
 <View style={{paddingLeft:10,flexDirection: 'row',justifyContent: 'space-between'}}>
-<Text style={{color:'white',fontSize: 20}}>Men Clothing     </Text>
-<Button style={{height:20, width:100}} onPress={() => this.props.navigation.navigate('Sub1',{title:"Men Clothing",category:"men_clothing",})}> 
+<Text style={{color:'white',fontSize: 20}}>Men Clothing       </Text>
+<Button style={{height:30, width:100}} onPress={() => this.props.navigation.navigate('Sub1',{title:"Men Clothing",category:"men_clothing",})}> 
 <Text>View all</Text>
 </Button>
 </View>
@@ -227,8 +227,8 @@ return (
 <List>
 <ListItem>
 <View style={{paddingLeft:10,flexDirection: 'row',justifyContent: 'space-between'}}>
-<Text style={{color:'white',fontSize: 20}}>Women Clothing </Text>
-<Button style={{height:20, width:100}} onPress={() => this.props.navigation.navigate('Sub1',{title:"Women Clothing",category:"women_clothing",})}> 
+<Text style={{color:'white',fontSize: 20}}>Women Clothing     </Text>
+<Button style={{height:30, width:100}} onPress={() => this.props.navigation.navigate('Sub1',{title:"Women Clothing",category:"women_clothing",})}> 
 <Text>View all</Text>
 </Button>
 </View>
