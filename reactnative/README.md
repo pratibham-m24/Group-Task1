@@ -22,6 +22,9 @@ Alternatively you can install the app in your device using the following link:
 
 
 
+Expo live demo
+:
+<img src="https://github.com/pratibham-m24/Group-Task1/blob/master/reactnative/assets/demo.png" width="350" height="650">
 ## Screenshots
 <img src="https://github.com/pratibham-m24/Group-Task1/blob/master/reactnative/src/images/Screenshot_2018-02-07-23-18-52.png" width="350" height="650">                                                                        
 <img src="https://github.com/pratibham-m24/Group-Task1/blob/master/reactnative/src/images/Screenshot_2018-02-07-23-20-53.png" width="350" height="650">
