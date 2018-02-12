@@ -17,14 +17,17 @@ frameworks and it uses Hasura features.
 
 •	npm start (To run the app,you must install expo app in your device)
 
+## Expo live demo
+Scan this QR code with your Expo mobile app to load the project immediately.
+
+<img src="https://github.com/pratibham-m24/Group-Task1/blob/master/reactnative/assets/demo.PNG" width="150" height="150">  
+
 Alternatively you can install the app in your device using the following link:
  https://exp-shell-app-assets.s3-us-west-1.amazonaws.com/android%2F%40prat24%2FGroupTask1-477c002c-0d01-11e8-97eb-0a580a782815-signed.apk
 
 
 
-Expo live demo
-:
-<img src="https://github.com/pratibham-m24/Group-Task1/blob/master/reactnative/assets/demo.png" width="350" height="650">
+
 ## Screenshots
 <img src="https://github.com/pratibham-m24/Group-Task1/blob/master/reactnative/src/images/Screenshot_2018-02-07-23-18-52.png" width="350" height="650">                                                                        
 <img src="https://github.com/pratibham-m24/Group-Task1/blob/master/reactnative/src/images/Screenshot_2018-02-07-23-20-53.png" width="350" height="650">
