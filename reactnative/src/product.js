@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {View,StyleSheet,TouchableOpacity,Image} from 'react-native';
-import { getProduct,addcart,addorder } from './Api'
+import {View,StyleSheet,TouchableOpacity,Image,Alert} from 'react-native';
+import { addcart,addorder } from './Api'
 import { Container, Header, Item, Input,Icon, Button, Left,Right,Body,Text,Toast,Title,Spinner,Thumbnail,Footer,FooterTab,Content,Card,CardItem } from 'native-base';
 import FIcon from 'react-native-vector-icons/FontAwesome';
 class Product extends React.Component {
@@ -10,7 +10,9 @@ constructor(props){
 
     this.state={
        showToast: false,    prod:this.props.navigation.state.params.details ,
-  userid: global.userid ,productid:this.props.navigation.state.params.proc ,auth: global.auth,  fontsAreLoaded: false,
+ 
+                 userid: global.userid ,productid:this.props.navigation.state.params.proc ,
+                 auth: global.auth,  fontsAreLoaded: false,
 
     }
   } 
@@ -31,21 +33,36 @@ constructor(props){
   }
 
  
+
+
 handleaddcartPressed = async () => {
  
    let resp = await addcart(this.state.userid, this.state.productid);
  
+if (resp.status === 504) {
+     
+   Alert.alert('Network error', 'Check your internet connection');
+      } 
 Toast.show({
               text: 'Item added to cart',
               position: 'bottom',
               
             }) 
 }
+
+
 handlebuyPressed = async () => {
  
    let resp = await addorder(this.state.userid, this.state.productid,this.state.auth);
   
+if (resp.status === 504) {
+     
+   Alert.alert('Network error', 'Check your internet connection');
+      } 
 }
+
+
+
   render() {
 const{navigate}=this.props.navigation;
 
@@ -92,11 +109,15 @@ if(this.state.prod !== null && this.state.fontsAreLoaded){
 </Body>
 
 </CardItem>
+
+
 <CardItem>
 <Image source={require("./images/rupees.png")} style={{height:30, width:30}}/>
 <Text style={{fontWeight: "bold",fontSize: 30}}>{this.state.prod.product_price}</Text>
 </CardItem>
 </Card>
+
+
 <Text style={{fontWeight: "bold",fontSize: 20,color: 'blue'}}>Features{"\n"}</Text>
 <Text>{this.state.prod.product_details}</Text>
   </Content>
@@ -117,14 +138,20 @@ if(this.state.prod !== null && this.state.fontsAreLoaded){
     )  
 }
 return (
-      <Container>
-        <Header style={{backgroundColor: '#4d4dff'}} />
-        <Content>
+     
+ <Container>
+     
+   <Header style={{backgroundColor: '#4d4dff'}} />
+     
+   <Content>
       
     <Spinner color='black' />
-        </Content>
-      </Container>
-    );
+   
+     </Content>
+     
+ </Container>
+    
+);
   }
 }
 
@@ -135,15 +162,7 @@ export default Product;
   
 const styles = StyleSheet.create({
  
- container: {
-  
-     
-backgroundColor: '#fff',
  
-   alignItems: 'center',
-  
-  justifyContent: 'center',
-  },
 canvas: {
  flex: 1,
     width: 120,

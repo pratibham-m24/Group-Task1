@@ -30,9 +30,11 @@ const networkErrorObj = {
 }
 
 
+
+
 export async function trySignup(username, password) {
  
- console.log('Making signup query');
+     console.log('Making signup query');
  
  let requestOptions = {
     "method": "POST",
@@ -50,8 +52,7 @@ export async function trySignup(username, password) {
 
   requestOptions["body"] = JSON.stringify(body);
 
-  console.log("Auth Response ---------------------");
-
+  
   
   try {
     let resp = await fetch(signupUrl, requestOptions);
@@ -62,15 +63,22 @@ export async function trySignup(username, password) {
   }
 
   catch(e) {
-    console.log("Request Failed: " + e);
+    
+console.log("Request Failed: " + e);
  
    return networkErrorObj;
-  }
+  
 }
 
 
+}
+
+
+
+
 export async function tryLogin(username, password) {
-  console.log('Making login query');
+  
+console.log('Making login query');
   
 let requestOptions = {
     "method": "POST",
@@ -89,27 +97,34 @@ let body = {
   requestOptions["body"] = JSON.stringify(body);
 
 
-  console.log("Auth Response ---------------------");
   
-
   try {
-    let resp = await fetch(loginUrl, requestOptions);
+   
+ let resp = await fetch(loginUrl, requestOptions);
  
    console.log(resp);
-    return resp; 
+  
+  return resp; 
+
   }
   
 catch(e) {
-    console.log("Request Failed: " + e);
+   
+ console.log("Request Failed: " + e);
 
     return networkErrorObj;
+
   }
+
+
 }
+
+
 
 
 export async function getProduct(category) {
 
-	console.log('Making data query (get article list)');
+	console.log('Making data query (get product details)');
 
   let requestOptions = {
       "method": "POST",
@@ -126,20 +141,26 @@ export async function getProduct(category) {
  
  requestOptions["body"] = JSON.stringify(body);
   
-console.log('Data Response ---------------------');
- 
+
  try {
-  	let resp = await fetch(dataUrl, requestOptions);
+  	
+let resp = await fetch(dataUrl, requestOptions);
  
    console.log(resp);
-  	return resp; 
+  
+	return resp;
+ 
   }
  
  catch(e) {
-  	console.log("Request Failed: " + e);
+  
+	console.log("Request Failed: " + e);
 
     return networkErrorObj;
+
   }
+
+
 }
 
 
@@ -167,18 +188,24 @@ export async function trysearch(name) {
   
   
   try {
-    let resp = await fetch(searchUrl, requestOptions);
+    
+let resp = await fetch(searchUrl, requestOptions);
 
     console.log(resp);
 
     return resp; 
+
   }
 
   catch(e) {
-    console.log("Request Failed: " + e);
+    
+console.log("Request Failed: " + e);
  
    return networkErrorObj;
-  }
+ 
+ }
+
+
 }
 
 
@@ -205,25 +232,30 @@ export async function addcart(userid,productid) {
   
   
   try {
-    let resp = await fetch(addUrl, requestOptions);
+    
+let resp = await fetch(addUrl, requestOptions);
 
     console.log(resp);
 
     return resp; 
-  }
+  
+}
 
   catch(e) {
+
     console.log("Request Failed: " + e);
  
    return networkErrorObj;
+
   }
+
 }
 
 
 
 export async function deletecart(userid,productid) {
  
- console.log('Adding to the cart');
+ console.log('Deleting......');
  
  let requestOptions = {
     "method": "POST",
@@ -242,25 +274,31 @@ export async function deletecart(userid,productid) {
   
   
   try {
-    let resp = await fetch(delUrl, requestOptions);
+    
+let resp = await fetch(delUrl, requestOptions);
 
     console.log(resp);
 
     return resp; 
+
   }
 
   catch(e) {
-    console.log("Request Failed: " + e);
+   
+ console.log("Request Failed: " + e);
  
    return networkErrorObj;
+
   }
+
+
 }
 
 
 
 export async function addorder(userid,productid,auth) {
  
- console.log('Adding to the cart');
+ console.log('Adding.......');
  
  let requestOptions = {
     "method": "POST",
@@ -279,25 +317,30 @@ export async function addorder(userid,productid,auth) {
   
   
   try {
-    let resp = await fetch(aorderUrl, requestOptions);
+   
+ let resp = await fetch(aorderUrl, requestOptions);
 
     console.log(resp);
 
     return resp; 
+
   }
 
   catch(e) {
-    console.log("Request Failed: " + e);
+   
+ console.log("Request Failed: " + e);
  
    return networkErrorObj;
-  }
+  
+}
+
 }
 
 
 
 export async function vieworder(userid,auth) {
  
- console.log('Adding to the cart');
+ console.log('Viewing......');
  
  let requestOptions = {
     "method": "POST",
@@ -316,18 +359,24 @@ export async function vieworder(userid,auth) {
   
   
   try {
-    let resp = await fetch(vorderUrl, requestOptions);
+   
+ let resp = await fetch(vorderUrl, requestOptions);
 
     console.log(resp);
 
     return resp; 
+
   }
 
   catch(e) {
-    console.log("Request Failed: " + e);
+ 
+   console.log("Request Failed: " + e);
  
    return networkErrorObj;
-  }
+  
+}
+
+
 }
 
 
@@ -355,53 +404,26 @@ export async function viewcart(userid) {
   
   
   try {
-    let resp = await fetch(viewUrl, requestOptions);
+    
+let resp = await fetch(viewUrl, requestOptions);
 
     console.log(resp);
 
     return resp; 
+
   }
 
   catch(e) {
-    console.log("Request Failed: " + e);
+  
+  console.log("Request Failed: " + e);
  
    return networkErrorObj;
-  }
+ 
+ }
+
 }
 
 
 
 
 
-export async function getArticle(id) {
-  
-console.log('Making data query (get article)');
- 
- let requestOptions = {
-      "method": "POST",
-  
-    "headers": {
-          "Content-Type": "application/json"
-      }
-  };
-
-
-  let body = {
-      "category": mobile_phone };
-
-
-
-
-
-  requestOptions["body"] = JSON.stringify(body);
-  console.log('Data Response ---------------------');
-  try{
-  	let resp = await fetch(dataUrl, requestOptions);
-    console.log(resp);
-  	return resp;
-  }
-  catch (e) {
-  	console.log("Request failed: " + e);
-    return networkErrorObj;
-  }
-};

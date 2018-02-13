@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+
 import { Font } from 'expo';
 import {View,StyleSheet,TouchableOpacity, ScrollView,
  } from 'react-native';
-import {NavigationActions} from 'react-navigation';
+
 import FIcon from 'react-native-vector-icons/FontAwesome';
 import IIcon from 'react-native-vector-icons/Ionicons';
 import EIcon from 'react-native-vector-icons/Entypo';
@@ -13,6 +13,8 @@ import {Container, Header, Content,Card,CardItem,Thumbnail,
           List, ListItem, Text,Icon, Left, Body,
           Right, Switch,Button } from 'native-base';
 import S1 from "./1s.js";
+              
+
 
 class SideBar extends React.Component {
 
@@ -144,8 +146,8 @@ const styles = StyleSheet.create({
      backgroundColor: 'white',
   },
 })  ;
-SideBar.propTypes = {
-navigation:PropTypes.object
-};
+
+
+
 export default SideBar; 
                                                                                           

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {View,StyleSheet,TouchableOpacity,Image} from 'react-native';
+import {View,StyleSheet,TouchableOpacity,Image,Alert} from 'react-native';
 import { Container, Header, Item, Input,Icon, Button,Thumbnail,Content,Spinner, Left,Card,CardItem,Right,Body,Text } from 'native-base';
 import { vieworder } from './Api'
 import FIcon from 'react-native-vector-icons/FontAwesome';
@@ -42,7 +42,9 @@ else {
     }
 
   
-  await Expo.Font.loadAsync({
+ 
+
+ await Expo.Font.loadAsync({
       
 'Roboto': require('native-base/Fonts/Roboto.ttf'),
  
@@ -58,11 +60,11 @@ else {
 const{navigate}=this.props.navigation;
 const showProd = () => {
 return this.state.prod.map((art,i) => {
-console.log(art);
+
 return (
 
-<TouchableOpacity onPress={() => this.props.navigation.navigate('Product')}  key={i}> 
-  <Card>
+
+  <Card key={i}>
 <CardItem>
 <Left>
 <Thumbnail square large source={{uri: art.orderproduct.product_imageid}} style={styles.canvas} />
@@ -80,7 +82,7 @@ return (
 </CardItem>
 
 </Card>
-</TouchableOpacity>
+
  );
 }); };
 if(this.state.prod !== null && this.state.fontsAreLoaded){
@@ -113,16 +115,23 @@ if(this.state.prod !== null && this.state.fontsAreLoaded){
     )
 }
 return (
-      <Container>
-        <Header style={{backgroundColor:'#4d4dff'}}/>
-        <Content>
+     
+ <Container>
+    
+    <Header style={{backgroundColor:'#4d4dff'}}/>
+      
+  <Content>
       
     <Spinner color='black' />
-        </Content>
-      </Container>
+    
+    </Content>
+      
+</Container>
     );
   }
 }
+
+
 
 export default Order;
 
@@ -130,16 +139,7 @@ export default Order;
   
 const styles = StyleSheet.create({
  
- container: {
-  
-  flex: 1,
-    
-backgroundColor: '#fff',
- 
-   alignItems: 'center',
-  
-  justifyContent: 'center',
-  },
+
 
 canvas: {
  flex: 1,

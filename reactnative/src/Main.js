@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {TouchableOpacity,View,Image,ScrollView,Alert,StyleSheet} from 'react-native';
 import FIcon from 'react-native-vector-icons/FontAwesome';
-
-import { Col, Row, Grid } from 'react-native-easy-grid';
-import {NavigationActions} from 'react-navigation';
 import { getProduct } from './Api'
 
 
-import { Container, Header, Title, Content,Thumbnail, Footer,Segment,DeckSwiper,Spinner,Card,CardItem, FooterTab,Item,Input, Button, Left, Right, Body, Icon, Text,List,ListItem } from 'native-base';
+import { Container, Header, Title, Content,Thumbnail, Footer,Segment,DeckSwiper,Spinner,
+        Card,CardItem, FooterTab,Item,Input, Button, Left, Right, Body, Icon, Text,List,ListItem } from 'native-base';
 
 
 class Main extends React.Component {
@@ -25,7 +23,9 @@ class Main extends React.Component {
   } 
 
 
-  async componentDidMount(){
+ 
+
+ async componentDidMount(){
     
 let resp = await getProduct("mobile_phone");
   
@@ -33,7 +33,7 @@ let resp = await getProduct("mobile_phone");
   
     articleObjJson = await resp.json();
  
-console.log(articleObjJson);
+
      this.setState({
         resp: await articleObjJson     });
     } 
@@ -50,13 +50,15 @@ else {
 
  
 
+
+
 let resp1 = await getProduct("men_clothing");
   
   if(resp1.status === 200){
   
     articleObjJson = await resp1.json();
  
-console.log(articleObjJson);
+
      this.setState({
         resp1: await articleObjJson     });
     } 
@@ -73,13 +75,15 @@ else {
 
   
 
+
+
 let resp2 = await getProduct("women_clothing");
   
   if(resp2.status === 200){
   
     articleObjJson = await resp2.json();
  
-console.log(articleObjJson);
+
      this.setState({
         resp2: await articleObjJson     });
     } 
@@ -95,47 +99,29 @@ else {
     }
 
    
-  await Expo.Font.loadAsync({
+  
+
+
+await Expo.Font.loadAsync({
       
 'Roboto': require('native-base/Fonts/Roboto.ttf'),
  
      'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
-    });
    
+ });
+   
+
  this.setState({...this.state, fontsAreLoaded: true});
-  }
-
- 
-handledispPressed = async (category) => {
- 
-let resp1 = await getProduct(category);
-
-   
-  if(resp1.status === 200){
-  
-    articleObj = await resp1.json();
  
 
-     this.setState({
-       resp1: await articleObj    });
-  
 
-  } 
-else {
+ }
 
-      if (prod.status === 504) {
-     
-   Alert.alert('Network error', 'Check your internet connection');
-      } else
- {
-        Alert.alert('Something went wrong', 'Please check table permissions and your internet connection')
-      }
-    }
-
-  
+ 
 
 
-}
+
+
 
  render() {
 
@@ -198,6 +184,8 @@ return (
 </View>
 </ListItem>
 </List>
+
+
 <Card>
 <CardItem>
 
@@ -251,15 +239,22 @@ return (
     )
   }
 return (
-      <Container>
-        <Header style={{backgroundColor:'#4d4dff'}} />
-        <Content>
+    
+  <Container>
+     
+   <Header style={{backgroundColor:'#4d4dff'}} />
+    
+    <Content>
       
     <Spinner color='black' />
-        </Content>
-      </Container>
-    );
-  }
+     
+   </Content>
+     
+ </Container>
+    
+);
+  
+}
 }
 
 
@@ -267,15 +262,7 @@ export default Main;
 
 const styles = StyleSheet.create({
  
- container: {
-  
-     
-backgroundColor: '#fff',
  
-   alignItems: 'center',
-  
-  justifyContent: 'center',
-  },
 
 
 canvas: {

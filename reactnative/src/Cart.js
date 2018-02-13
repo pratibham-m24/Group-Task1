@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {View,StyleSheet,TouchableOpacity,Image} from 'react-native';
-import { Container, Header, Item, Input,Icon, Button,Thumbnail,Content,Footer,FooterTab,Spinner,Toast, Left,Card,CardItem,Right,Body,Text,List,ListItem } from 'native-base';
+import {View,StyleSheet,TouchableOpacity,Image,Alert} from 'react-native';
+import { Container, Header, Item, Input,Icon, Button,Thumbnail,Content,
+         Footer,FooterTab,Spinner,Toast, Left,Card,CardItem,Right,Body,Text,List,ListItem } from 'native-base';
 import { viewcart,deletecart,addorder } from './Api'
 import FIcon from 'react-native-vector-icons/FontAwesome';
 class Empty extends React.Component {
@@ -25,13 +26,16 @@ constructor(props){
     this.state={
           prod: null,
     fontsAreLoaded: false,
- userid: global.userid,productid: 1,auth:global.auth
+ userid: global.userid,
+                               auth:global.auth
     }
  
  } 
 
 
-  async componentDidMount(){
+  
+
+async componentDidMount(){
     
 let prod = await viewcart(this.state.userid);
   
@@ -39,7 +43,7 @@ let prod = await viewcart(this.state.userid);
   
     articleObjJson = await prod.json();
  
-console.log(articleObjJson);
+
      this.setState({
         prod: await articleObjJson     });
     } 
@@ -55,7 +59,8 @@ else {
     }
 
   
-  await Expo.Font.loadAsync({
+ 
+ await Expo.Font.loadAsync({
       
 'Roboto': require('native-base/Fonts/Roboto.ttf'),
  
@@ -63,17 +68,24 @@ else {
     });
    
  this.setState({...this.state, fontsAreLoaded: true});
-  }
+ 
+ }
 
  
+
 handledelPressed = async (prodid) => {
  
 
    let resp = await deletecart(this.state.userid, prodid);
 
-let prod = await viewcart(this.state.userid);
+if (resp.status === 504) {
+     
+   Alert.alert('Network error', 'Check your internet connection');
+      } 
+
+   let prod = await viewcart(this.state.userid);
   
-  if(prod.status === 200){
+   if(prod.status === 200){
   
     articleObjJson = await prod.json();
  
@@ -96,16 +108,29 @@ else {
 
 
 }
+
+
 handlebuyPressed = async (prodid) => {
  
 let addod = await addorder(this.state.userid, prodid,this.state.auth);
 
+if (addod.status === 504) {
+     
+   Alert.alert('Network error', 'Check your internet connection');
+      } 
 Toast.show({
               text: 'Order placed successfully',
               position: 'bottom',
              
             }) 
-   let resp = await deletecart(this.state.userid, prodid);
+   
+let resp = await deletecart(this.state.userid, prodid);
+
+if (resp.status === 504) {
+     
+   Alert.alert('Network error', 'Check your internet connection');
+      } 
+
 
 let prod = await viewcart(this.state.userid);
   
@@ -119,7 +144,8 @@ let prod = await viewcart(this.state.userid);
     } 
 else {
 
-      if (prod.status === 504) {
+      
+if (prod.status === 504) {
      
    Alert.alert('Network error', 'Check your internet connection');
       } else
@@ -140,46 +166,53 @@ var num=-1;
 const showProd = () => {
 return this.state.prod.map((art,i) => {
 num=num+1;
-console.log(art);
+
 if(art.cart.total_cost == undefined){
 
 return (
 <TouchableOpacity onPress={() => this.props.navigation.navigate('Product',{proc: art.cart.product_id,details: art.cart,})} key={i}> 
  
 <Card>
-<CardItem>
-<Left>
+ <CardItem>
+  <Left>
 
-<Thumbnail square large source={{uri: art.cart.product_imageid}} style={styles.canvas} />
+    <Thumbnail square large source={{uri: art.cart.product_imageid}} style={styles.canvas} />
 
-<Body>
-<Text style={{fontWeight: "bold", fontSize: 15}}>{art.cart.product_name}</Text>
+  <Body>
+  <Text style={{fontWeight: "bold", fontSize: 15}}>{art.cart.product_name}</Text>
 
-<Text style={{fontWeight: "bold", fontSize: 30}}><Image source={require("./images/rupees.png")} style={{height:30, width:30}}/>{art.cart.product_price}</Text>
-</Body>
-</Left>
-</CardItem>
+   <Text style={{fontWeight: "bold", fontSize: 30}}><Image source={require("./images/rupees.png")} style={{height:30, width:30}}/>{art.cart.product_price}</Text>
+  </Body>
+  </Left>
+  </CardItem>
+
+
 <CardItem>
 <View style = {{height:10}} />
 <Button block onPress={() =>this.handledelPressed(art.cart.product_id)}> 
 <Text>                Remove             </Text>
 </Button>
 </CardItem>
+
 </Card>
  
 </TouchableOpacity> 
  
  )}
+
+
 return(
 
 <Card key={i} >
-<CardItem>
-<List>
-<ListItem>
+  <CardItem>
+   <List>
+     <ListItem>
 <Text>PRICE DETAILS</Text>
-</ListItem>
-</List>
-</CardItem>
+     </ListItem>
+   </List>
+   </CardItem>
+
+
 <CardItem>
 <Text>
 <Text>Price({num} Qty):            {art.cart.total_cost} {"\n"}</Text>
@@ -247,15 +280,23 @@ if(this.state.prod !== null && this.state.fontsAreLoaded ){
     )
 }
 return (
-      <Container>
-        <Header style={{backgroundColor:'#4d4dff'}}/>
-        <Content>
+    
+  <Container>
+       
+ <Header style={{backgroundColor:'#4d4dff'}}/>
+   
+     <Content>
       
     <Spinner color='black' />
-        </Content>
-      </Container>
-    );
-  }
+    
+    </Content>
+      
+</Container>
+   
+ );
+ 
+
+ }
 }
 
 export default Cart;

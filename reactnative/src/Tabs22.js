@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {AppRegistry,StyleSheet,TouchableOpacity,View,Image} from 'react-native';
+import {AppRegistry,StyleSheet,TouchableOpacity,View,Image,Alert} from 'react-native';
 import { Container, Header, Item, Input,Icon,Form, Button, Text,Spinner,Content,Card,CardItem,Left,Thumbnail,Body } from 'native-base';
 import { trysearch } from './Api'
 
@@ -22,7 +22,8 @@ return(
 }
 class Search extends React.Component {
 constructor(props){
-    super(props);
+    
+super(props);
    
  this.state = {
 	  	  
@@ -32,6 +33,8 @@ constructor(props){
   }
 
  
+
+
 handleSearchPressed = async () => {
  
    let resp = await trysearch(this.state.searchBox);
@@ -39,7 +42,7 @@ handleSearchPressed = async () => {
  if(resp.status === 200){
   
       respJson = await resp.json();
-console.log(respJson[0]);
+
 this.setState({
         resp: await respJson     });
  
@@ -69,6 +72,8 @@ handlesearchChange = searchBox => {
   }
 
   
+
+
 render() {
 const{navigate}=this.props.navigation;
 const showProd = () => {
@@ -76,7 +81,7 @@ return this.state.resp.map((article,i) => {
 var proc=article.product_id;
 return (
 
-<TouchableOpacity onPress={() => this.props.navigation.navigate('Product',{proc: article.product_id,detail:article,})}  key={i}> 
+<TouchableOpacity onPress={() => this.props.navigation.navigate('Product',{proc: article.product_id,details:article,})}  key={i}> 
   <Card>
 <CardItem>
 <Left>
@@ -94,6 +99,8 @@ return (
 </TouchableOpacity>
  );
 }); };
+
+
 if(this.state.resp!== null){
 return (
 <Container style={{backgroundColor:'#DCDCDC'}}>
@@ -108,7 +115,7 @@ return (
          
 
             
-            <Input value={this.state.searchBox} placeholder="Search for Products" onChangeText={this.handlesearchChange} />
+            <Input value={this.state.searchBox} onChangeText={this.handlesearchChange} />
 <Button transparent onPress={this.handleSearchPressed} >
               <Icon name="search" style={{color:'black'}} />
             </Button>
@@ -116,6 +123,7 @@ return (
 
            
           </Header>
+
 
      {
             (this.state.resp[0] !== undefined)
@@ -134,7 +142,8 @@ return (
 
 return (
    
-<Container style={{backgroundColor:'#fff'}}>
+<Container style={{backgroundColor:'#DCDCDC'}}>
+
         <Header searchBar rounded style={{backgroundColor: '#fff'}}>
  <Item>
 <Button transparent onPress={() => this.props.navigation.goBack(null)}
@@ -146,7 +155,7 @@ return (
          
 
             
-            <Input value={this.state.searchBox} onChangeText={this.handlesearchChange} />
+            <Input placeholder="Search for Products" onChangeText={this.handlesearchChange} />
 <Button transparent onPress={this.handleSearchPressed} >
               <Icon name="search" style={{color:'black'}} />
             </Button>

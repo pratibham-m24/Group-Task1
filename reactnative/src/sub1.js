@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {View,StyleSheet,TouchableOpacity,Image} from 'react-native';
+import {View,StyleSheet,TouchableOpacity,Image,Alert} from 'react-native';
 import { getProduct,addcart } from './Api'
 import { Container, Header, Item, Input,Icon, Button, Left,Right,Body,Text,Title,Spinner,Thumbnail,Content,Card,CardItem } from 'native-base';
 import FIcon from 'react-native-vector-icons/FontAwesome';
@@ -10,7 +10,8 @@ constructor(props){
 
     this.state={
       category: this.props.navigation.state.params.category,
-      prod: null,   fontsAreLoaded: false,
+     
+                      prod: null,   fontsAreLoaded: false,
 
     }
  
@@ -18,14 +19,15 @@ constructor(props){
 
 
   async componentWillMount(){
-    
+  
+  
 let prod = await getProduct(this.state.category);
   
   if(prod.status === 200){
   
     articleObjJson = await prod.json();
  
-console.log(prod.product_name);
+
      this.setState({
         prod: await articleObjJson     });
     } 
@@ -41,7 +43,10 @@ else {
     }
 
   
-  await Expo.Font.loadAsync({
+  
+
+
+await Expo.Font.loadAsync({
       
 'Roboto': require('native-base/Fonts/Roboto.ttf'),
  
@@ -56,6 +61,8 @@ else {
   render() {
 
 const{navigate}=this.props.navigation;
+
+
 const showProd = () => {
 return this.state.prod.map((article,i) => {
 var proc=article.product_id;
@@ -124,13 +131,18 @@ if(this.state.prod !== null && this.state.fontsAreLoaded){
     )  
 }
 return (
-      <Container>
-        <Header style={{backgroundColor: '#4d4dff'}}/>
-        <Content>
+      
+<Container>
+       
+ <Header style={{backgroundColor: '#4d4dff'}}/>
+      
+  <Content>
       
     <Spinner color='black' />
-        </Content>
-      </Container>
+    
+    </Content>
+     
+ </Container>
     );
   }
 }
@@ -142,15 +154,7 @@ export default Sub1;
   
 const styles = StyleSheet.create({
  
- container: {
-  
-     
-backgroundColor: '#fff',
  
-   alignItems: 'center',
-  
-  justifyContent: 'center',
-  },
 
 
 canvas: {
