@@ -23,7 +23,7 @@ In order to get this app running, you must have the following:
 
 ```
 $ # Get the project folder and create the cluster in one shot
-$ hasura quickstart team74/ecommerce_app
+$ hasura quickstart pratibha/ecommerce_app
 
 ```
 
