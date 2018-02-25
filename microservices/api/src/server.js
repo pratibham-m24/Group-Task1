@@ -1,3 +1,4 @@
+const clusterName = "environmentally45";
 const express = require('express')
 var cookieParser = require('cookie-parser');
 const app = express()
@@ -5,7 +6,7 @@ const request= require('request');
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var fetchAction =  require('node-fetch');
-const fileURL="https://filestore.environmentally45.hasura-app.io/v1/file/"
+const fileURL="https://filestore." + clusterName + ".hasura-app.io/v1/file/"
 
 
 app.use(cookieParser());
@@ -14,7 +15,7 @@ app.use(bodyParser.json());
  
 
 app.post('/signup', function (req, res) {
-	var url = "https://auth.environmentally45.hasura-app.io/v1/signup";
+	var url = "https://auth." + clusterName + ".hasura-app.io/v1/signup";
 	var requestOptions = {
 	    "method": "POST",
 	    "headers": {
@@ -44,7 +45,7 @@ app.post('/signup', function (req, res) {
 		 //window.localStorage.setItem('HASURA_AUTH_TOKEN', authToken);
 		var username=result.username;
 		var user_id=result.hasura_id;
-		var url2 = "https://data.environmentally45.hasura-app.io/v1/query";
+		var url2 = "https://data." + clusterName + ".hasura-app.io/v1/query";
 
 	var requestOptions2 = {
   	  "method": "POST",
@@ -96,7 +97,7 @@ app.post('/signup', function (req, res) {
 });
 
 app.post('/login', function (req, res) {
-	var url = "https://auth.environmentally45.hasura-app.io/v1/login";
+	var url = "https://auth." + clusterName + ".hasura-app.io/v1/login";
 	var requestOptions = {
 	    "method": "POST",
 	    "headers": {
@@ -135,7 +136,7 @@ app.post('/login', function (req, res) {
 });
 
 app.post('/category', function (req, res) {
-var url = "https://data.environmentally45.hasura-app.io/v1/query";
+var url = "https://data." + clusterName + ".hasura-app.io/v1/query";
 var requestOptions = {
     "method": "POST",
     "headers": {
@@ -183,7 +184,7 @@ fetchAction(url, requestOptions)
 
 app.post('/search', function (req, res) {
 
-var url = "https://data.environmentally45.hasura-app.io/v1/query";
+var url = "https://data." + clusterName + ".hasura-app.io/v1/query";
 
 var requestOptions = {
     "method": "POST",
@@ -235,7 +236,7 @@ fetchAction(url, requestOptions)
 
 app.post('/addcart', function (req, res) {
 
-var url = "https://data.environmentally45.hasura-app.io/v1/query";
+var url = "https://data." + clusterName + ".hasura-app.io/v1/query";
 
 var requestOptions = {
     "method": "POST",
@@ -274,7 +275,7 @@ fetchAction(url, requestOptions)
 });
 
 app.post('/viewcart', function (req, res) {
-var url = "https://data.environmentally45.hasura-app.io/v1/query";
+var url = "https://data." + clusterName + ".hasura-app.io/v1/query";
 
 var requestOptions = {
     "method": "POST",
@@ -335,7 +336,7 @@ fetchAction(url, requestOptions)
 
 
 app.post('/addorder', function (req, res) {
-var url = "https://data.environmentally45.hasura-app.io/v1/query";
+var url = "https://data." + clusterName + ".hasura-app.io/v1/query";
 var authtoken=req.body.authtoken;
 var requestOptions = {
     "method": "POST",
@@ -376,7 +377,7 @@ fetchAction(url, requestOptions)
 
 
 app.post('/vieworder', function (req, res) {
-var url = "https://data.environmentally45.hasura-app.io/v1/query";
+var url = "https://data." + clusterName + ".hasura-app.io/v1/query";
 var authtoken=req.body.authtoken;
 var requestOptions = {
     "method": "POST",
@@ -430,7 +431,7 @@ fetchAction(url, requestOptions)
 });
 
 app.post('/deletecart', function (req, res) {
-var url = "https://data.environmentally45.hasura-app.io/v1/query";
+var url = "https://data." + clusterName + ".hasura-app.io/v1/query";
 
 var requestOptions = {
     "method": "POST",

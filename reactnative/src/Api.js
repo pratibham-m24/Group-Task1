@@ -1,25 +1,29 @@
 
-const dataUrl = "https://api.environmentally45.hasura-app.io/category";
-
-const loginUrl = "https://api.environmentally45.hasura-app.io/login";
-
-const signupUrl = "https://api.environmentally45.hasura-app.io/signup";
 
 
-const searchUrl = "https://api.environmentally45.hasura-app.io/search";
+const clusterName = "environmentally45";
+
+const dataUrl = "https://api." + clusterName + ".hasura-app.io/category";
+
+const loginUrl = "https://api." + clusterName + ".hasura-app.io/login";
+
+const signupUrl = "https://api." + clusterName + ".hasura-app.io/signup";
 
 
-const addUrl = "https://api.environmentally45.hasura-app.io/addcart";
+const searchUrl = "https://api." + clusterName + ".hasura-app.io/search";
 
 
-const delUrl = "https://api.environmentally45.hasura-app.io/deletecart";
-
-const aorderUrl = "https://api.environmentally45.hasura-app.io/addorder";
-
-const vorderUrl = "https://api.environmentally45.hasura-app.io/vieworder";
+const addUrl = "https://api." + clusterName + ".hasura-app.io/addcart";
 
 
-const viewUrl = "https://api.environmentally45.hasura-app.io/viewcart";
+const delUrl = "https://api." + clusterName + ".hasura-app.io/deletecart";
+
+const aorderUrl = "https://api." + clusterName + ".hasura-app.io/addorder";
+
+const vorderUrl = "https://api." + clusterName + ".hasura-app.io/vieworder";
+
+
+const viewUrl = "https://api." + clusterName + ".hasura-app.io/viewcart";
 
 
 import { Alert } from 'react-native';

@@ -12,7 +12,7 @@ import MIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Container, Header, Content,Card,CardItem,Thumbnail,
           List, ListItem, Text,Icon, Left, Body,
           Right, Switch,Button } from 'native-base';
-import S1 from "./1s.js";
+
               
 
 
@@ -65,7 +65,7 @@ this.setState({ fontLoaded: true });
 
  <ListItem style={{borderBottomWidth: 0}} >
              
-<TouchableOpacity onPress={() => this.props.navigation.navigate('Drawer1')}>
+<TouchableOpacity onPress={() => this.props.navigation.navigate('Main')}>
 
            
                 <Text style={{fontWeight: "normal"}}><EIcon name="home" size={25} style={{color:'grey'}} />   Home</Text>
@@ -90,7 +90,7 @@ this.setState({ fontLoaded: true });
 
             <ListItem style={{borderBottomWidth: 0}}  >
               <Left>
-<TouchableOpacity onPress={() => this.props.navigation.navigate('S3')}>
+<TouchableOpacity onPress={() => this.props.navigation.navigate('S2')}>
 
 
             
@@ -125,7 +125,7 @@ this.setState({ fontLoaded: true });
 
               
              
-                <Text style={{fontWeight: "normal"}}><EIcon name="book" style={{color:'grey'}} size={20}/>Logout</Text>
+                <Text style={{fontWeight: "normal"}}><EIcon name="arrow-right" style={{color:'grey'}} size={20}/>Logout</Text>
               </TouchableOpacity>
               </Left>
             </ListItem>

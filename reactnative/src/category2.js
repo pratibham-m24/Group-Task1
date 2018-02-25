@@ -17,7 +17,7 @@ import {ScrollView,TouchableOpacity} from 'react-native';
 import FIcon from 'react-native-vector-icons/FontAwesome';
 
 
-class Header3 extends Component {
+class Header2 extends Component {
 
   render() {
 
@@ -127,4 +127,4 @@ class Header3 extends Component {
   }
 }
 
-export default Header3;
+export default Header2;

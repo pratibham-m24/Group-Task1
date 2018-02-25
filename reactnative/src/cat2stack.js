@@ -2,17 +2,17 @@ import React from "react";
 import { Root } from "native-base";
 import { StackNavigator } from "react-navigation";
 import Main from "./Main.js";
-import Search from "./Tabs22.js";
+import Search from "./Search.js";
 import Cart from "./Cart.js";
 import Sub1 from "./sub1.js";
-import Header3 from "./3.js";
+import Header2 from "./category2.js";
 import Product from "./product.js";
 import Book from "./Book.js";
 
-const S3 = StackNavigator(
+const S2 = StackNavigator(
   {
     
-   Header3: { screen: Header3},
+   Header2: { screen: Header2},
    
     Search: { screen: Search },
     
@@ -24,10 +24,10 @@ const S3 = StackNavigator(
    
     },
   {
-    initialRouteName:"Header3",
+    initialRouteName:"Header2",
     headerMode: "none",
   }
 );
 
-export default S3;
+export default S2;
   

@@ -1,8 +1,8 @@
 {
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 2764,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "packagerPid": 5368,
+  "expoServerNgrokUrl": "https://xb-3mk.prat24.reactnative.exp.direct",
+  "packagerNgrokUrl": "https://packager.xb-3mk.prat24.reactnative.exp.direct",
+  "ngrokPid": 5004
 }

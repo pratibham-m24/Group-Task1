@@ -7,7 +7,7 @@ import {TouchableOpacity,View,Image} from 'react-native';
 
 import Main from "./src/Main.js";
 
-import Drawer2 from "./src/drawer1.js";
+import Drawer from "./src/drawer.js";
 import Login from "./src/Login.js";
 
 
@@ -16,7 +16,7 @@ const AppNavigator = StackNavigator(
   {
     Login: {screen: Login},
 
-    Drawer2: { screen: Drawer2},
+    Drawer: { screen: Drawer},
     
    
     Main : {screen: Main},

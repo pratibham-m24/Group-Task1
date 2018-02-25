@@ -8,7 +8,7 @@ import { View, Alert } from 'react-native';
 
 import { trySignup, tryLogin } from './Api';
 
-import Drawer2 from './drawer1.js'
+import Drawer from './drawer.js'
 
  
 class Login extends React.Component {
@@ -157,7 +157,7 @@ if(this.state.isLoggedIn === true){
 
  return (
       
-      <Drawer2 logoutCallback={this.handleLogout}/> 
+      <Drawer logoutCallback={this.handleLogout}/> 
        
 
  );

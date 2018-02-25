@@ -17,7 +17,7 @@ class Main extends React.Component {
     this.state={
       category: "mobile_phone",
      
- resp: null ,resp1: null,    fontsAreLoaded: false,
+ resp: null ,resp1: null, resp2:null,   fontsAreLoaded: false,
 
     }
   } 
@@ -31,11 +31,11 @@ let resp = await getProduct("mobile_phone");
   
   if(resp.status === 200){
   
-    articleObjJson = await resp.json();
+    respJson = await resp.json();
  
 
      this.setState({
-        resp: await articleObjJson     });
+        resp: await respJson     });
     } 
 else {
 
@@ -56,11 +56,11 @@ let resp1 = await getProduct("men_clothing");
   
   if(resp1.status === 200){
   
-    articleObjJson = await resp1.json();
+    resp1Json = await resp1.json();
  
 
      this.setState({
-        resp1: await articleObjJson     });
+        resp1: await resp1Json     });
     } 
 else {
 
@@ -81,11 +81,11 @@ let resp2 = await getProduct("women_clothing");
   
   if(resp2.status === 200){
   
-    articleObjJson = await resp2.json();
+    resp2Json = await resp2.json();
  
 
      this.setState({
-        resp2: await articleObjJson     });
+        resp2: await resp2Json     });
     } 
 else {
 
@@ -130,7 +130,7 @@ await Expo.Font.loadAsync({
 
 
 const{navigate}=this.props.navigation;
- if(this.state.articleObj !== null && this.state.fontsAreLoaded){
+ if(this.state.resp !== null && this.state.resp1 !== null && this.state.resp2 !== null && this.state.fontsAreLoaded){
  
 return (
       
