@@ -7,9 +7,9 @@ frameworks.It allows users
 • To signup/login to their account (authentication is managed by the Hasura Auth APIs)
 
 • To see a list of products being sold and filter by category or product name
-• To add multiple products to their shopping cart.
-• To place an order(without payment)
-• and maintains order history.
+• To add multiple products to their shopping cart.  
+• To place an order(without payment)  
+• and maintains order history.  
 
 
 ## How to get it running ?
