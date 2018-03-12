@@ -305,7 +305,7 @@ var body = {
         ],
         "where": {
             "cart_userid": {
-                "$eq": "user_id"
+                "$eq": user_id
             }
         }
     }
