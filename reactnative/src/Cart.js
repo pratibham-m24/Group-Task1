@@ -167,7 +167,7 @@ const showProd = () => {
 return this.state.prod.map((art,i) => {
 num=num+1;
 
-if(art.cart.total_cost == undefined){
+if(art.total_cost == undefined){
 
 return (
 <TouchableOpacity onPress={() => this.props.navigation.navigate('Product',{proc: art.cart.product_id,details: art.cart,})} key={i}> 
@@ -215,9 +215,9 @@ return(
 
 <CardItem>
 <Text>
-<Text>Price({num} Qty):            {art.cart.total_cost} {"\n"}</Text>
+<Text>Price({num} Qty):            {art.total_cost} {"\n"}</Text>
 <Text>Delivery free {"\n"}</Text>
-<Text style={{fontWeight: "bold", fontSize: 15}}>Total amount :           {art.cart.total_cost}</Text>
+<Text style={{fontWeight: "bold", fontSize: 15}}>Total amount :           {art.total_cost}</Text>
 </Text>
 </CardItem>
 </Card>
@@ -227,8 +227,9 @@ return(
 
 const addOrder = () => {
 return this.state.prod.map((art,i) => {
+if(art.total_cost == undefined){
 {this.handlebuyPressed(art.cart.product_id)}
-
+}
 }); };
 
 
@@ -258,11 +259,11 @@ if(this.state.prod !== null && this.state.fontsAreLoaded ){
 <Right/>
           
           </Header>
-{ (this.state.prod[0].cart.total_cost == undefined) ? 
+{ (this.state.prod[0].total_cost == undefined) ? 
  <Content>{showProd()}</Content>
    :<Empty/> }
 
-{ (this.state.prod[0].cart.total_cost == undefined) ? 
+{ (this.state.prod[0].total_cost == undefined) ? 
 <Footer><FooterTab>
             <Button style={{backgroundColor:'#32CD32'}} onPress={() =>addOrder()}>
               <Text style={{color:'white'}}>Buy now</Text>
