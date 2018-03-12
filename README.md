@@ -108,9 +108,8 @@ Scan this QR code with your Expo mobile app to load the project immediately.
 
 <img src="https://github.com/pratibham-m24/Group-Task1/blob/master/reactnative/assets/demo.PNG" width="150" height="150">  
 
-Alternatively you can install the app in your device using the following link:
- https://exp-shell-app-assets.s3-us-west-1.amazonaws.com/android%2F%40prat24%2FGroupTask1-64f3fa6c-1a2b-11e8-8cd0-0a580a78261f-signed.apk
-
+Alternatively you can install the app in your device using the following link: https://exp-shell-app-assets.s3-us-west-1.amazonaws.com/android%2F%40prat24%2FGroupTask1-f029f4d7-2616-11e8-9120-0a580a783c26-signed.apk
+ 
 
 
 
